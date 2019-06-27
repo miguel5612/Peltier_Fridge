@@ -45,7 +45,7 @@ void loop() {
     int setPoint = BCD2Integer(setPointA, setPointB, setPointC, setPointD);
     Serial.print("Temperatura deseada: ");
     Serial.println(setPoint);
-    double tempActual = map(analogRead(inputAnalog), 0, 1023, 0, 50);
+    double tempActual = map(analogRead(inputAnalog), 0, 1023, 0, 30) - 15;
     integer2BCD(tempActual, displayTempA, displayTempB, displayTempC, displayTempD);
     Serial.print("Temperatura actual: ");
     Serial.println(tempActual);
